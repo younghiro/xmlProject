@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="questionnaire">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Continents">1
+          <xsd:complexType>
+            <xsd:sequencess>
+                <xsd:element name="continent_name">
+                    <xsd:complexType>
+                        <xsd:element name="country_name" type="">
+                    <xsd:complexType>    
+            </xsd:sequence>
+            <xsd:attribute name="continent_name" type="xsd:string" deafult="">
+            <xsd:attribute name="continent_name" type="xsd:string">
+            <xsd:attribute name="continent_name" type="xsd:string">
+            <xsd:attribute name="continent_name" type="xsd:string">
+            <xsd:attribute name="continent_name" type="xsd:string">
+            <xsd:attribute name="continent_name" type="xsd:string">    
+          </xsd:complexType>
+        </xsd:element>
+
+
+
+        <xsd:element name="Form">8
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="FirstName" type="xsd:string">9
+              <xsd:element name="MiddleName" type="xsd:string">10
+              <xsd:element name="LastName" type="xsd:string">11
+              <xsd:element name="Age" type="ageType">12
+              <!-- restriction -->
+                <xs:simpleType name="ageType">
+                  <xs:restriction base="xs:int">
+                    <xs:minInclusive value="0"/>
+                    <xs:maxInclusive value="120"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              <!-- fin -->
+              <xsd:element name="DateOfBirth" type="xsd:data">13
+              <xsd:element name="Gender" type="gender">14
+              <!-- restriction -->
+              <xs:simpleType name="gender">
+                <xs:restriction base="xs:token">
+                  <xs:enumeration value="female"/>
+                  <xs:enumeration value="male"/>
+                  <xs:enumeration value="neuter"/>
+                </xs:restriction>
+              </xs:simpleType>
+              <!-- fin -->
+              <xsd:element name="Address">15
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Address1" type="xsd:string">16
+                    <xsd:element name="Address2" type="xsd:string">
+                    <xsd:element name="City" type="xsd:string">
+                    <xsd:element name="ZipCode" type="xsd:int">
+                    <xsd:element name="Country" type="xsd:string">20
+                  <xsd:sequence>
+                </xsd:complexType>
+              <xsd:element ref="Telepone" type="TeleponeType">
+              <xsd:element name="Occupatin" type="xsd:string">
+              <xsd:element name="FavFood">23
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="The_food_name" type="xsd:string">24
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="question" >25 <!-- deafult -->
+              <xsd:element name="answer">26
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="The_continent_name" type="Continent_options">27
+                      <!-- restriction -->
+                      <xsd:simpleType name="Continent_options">28
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="North America">
+                          <xsd:enumeration value="South America">
+                          <xsd:enumeration value="Europe">
+                          <xsd:enumeration value="Asia">
+                          <xsd:enumeration value="Africa">
+                          <xsd:enumeration value="Australia">
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                      <!-- fin -->
+                    <xsd:element name="The_country_name" type="Country_options">29
+                      <!-- restriction -->
+                      <xsd:simpleType name="Country_options">30
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="United States">
+                          <xsd:enumeration value="Peru">
+                          <xsd:enumeration value="Italy">
+                          <xsd:enumeration value="Japan">
+                          <xsd:enumeration value="Morocco">
+                          <xsd:enumeration value="Australia">
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                      <!-- fin -->
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <!-- restriction -->
+              <xsd:simpleType name="TeleponeType">
+                <xsd:restriction base="xsd:string" base="xsd:string">
+                  <xsd:pattern value="\d{3}-\d{3}-\d{3}-\d{3}">
+                </xsd:restriction>
+              </xsd:simpleType>
+              <!-- fin -->
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</schema>
