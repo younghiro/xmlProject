@@ -1,108 +1,114 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<questionnaire>
-  <Options>
-    <Continents>
-      <Continent Continent_name="North America">
-        <Country Country_name="United States">
-          <FamousFood>
-            <Food_name>Cheeseburger<food_name>
-            <Average_price>7<Average_price>
-            <Ingredient>Ground beef</Ingredient>
-            <Ingredient>Cheese</Ingredient>
-            <Ingredient>Bread</Ingredient>
-            <Ingredient>Lettuce</Ingredient>
-            <Ingredient>Tomato</Ingredient>
-            <Ingredient>Onion</Ingredient>
-            <Ingredient>Pickles</Ingredient>
-          </FamousFood>
-        </Country>
-      </Continent>
-      <Continent Continent_name="South America">
-        <Country Country_name="Peru">
-          <FamousFood>
-            <Food_name>Ceviche<food_name>
-            <Average_price>12<Average_price>
-            <Ingredient>Fresh fish</Ingredient>
-            <Ingredient>Lime juice</Ingredient>
-            <Ingredient>Onion</Ingredient>
-            <Ingredient>Chili peppers</Ingredient>
-            <Ingredient>Salt</Ingredient>
-          </FamousFood>
-        </Country>
-      </Continent>
-      <Continent Continent_name="Europe">
-        <Country Country_name="Italy">
-          <FamousFood>
-            <Food_name>Pizza Margherita<food_name>
-            <Average_price>10<Average_price>
-            <Ingredient>Pizza dough</Ingredient>
-            <Ingredient>Tomato sauce</Ingredient>
-            <Ingredient>Mozzarella cheese</Ingredient>
-            <Ingredient>Basil</Ingredient>
-          </FamousFood>
-        </Country>
-      </Continent>
-      <Continent Continent_name="Asia">
-        <Country Country_name="Japan">
-          <FamousFood>
-            <Food_name>Sushi<food_name>
-            <Average_price>20<Average_price>
-            <Ingredient>Rice</Ingredient>
-            <Ingredient>Raw fish</Ingredient>
-            <Ingredient>Seaweed</Ingredient>
-            <Ingredient>Soy sauce</Ingredient>
-            <Ingredient>Wasabi</Ingredient>
-          </FamousFood>
-        </Country>
-      </Continent>
-      <Continent Continent_name="Africa">
-        <Country Country_name="Morocco">
-          <FamousFood>
-            <Food_name>Tagine<food_name>
-            <Average_price>12<Average_price>
-            <Ingredient>Meat (chicken, lamb, beef)</Ingredient>
-            <Ingredient>Vegetables (onion, carrot, potato)</Ingredient>
-            <Ingredient>Dried fruits (raisins, dates)</Ingredient>
-            <Ingredient>Spices (cumin, ginger, cinnamon)</Ingredient>
-          </FamousFood>
-        </Country>
-      </Continent>
-      <Continent Continent_name="Australia">
-        <Country Country_name="Australia">
-          <FamousFood>
-            <Food_name>Meat Pie<food_name>
-            <Average_price>7<Average_price>
-            <Ingredient>Ground beef</Ingredient>
-            <Ingredient>Pastry</Ingredient>
-            <Ingredient>Onion</Ingredient>
-            <Ingredient>Gravy</Ingredient>
-          </FamousFood>
-        </Country>
-      </Continent>
-    </Continents>
-  </Options>
-  <Form>
-    <FirstName>Justin</FirstName>
-    <MiddleName>Drew</MiddleName>
-    <LastName>Bieber</LastName>
-    <Age>29</Age>
-    <DateOfBirth>1994-03-01<DateOfBirth>
-    <Gender>Male</Gender>
-    <Address>
-      <Address1>aaaaa</Address1>
-      <Address2>bbbbbb</Address2>
-      <City>Toront<City>
-      <ZipCode>1111111<ZipCode>
-      <Country>Canada<Country>
-    </Address>
-    <Telepone>000-000-000-000</telepone>
-    <Occupation>Singer</Occupation>
-    <FavFood_food_name>Cheeseburger</The_Food_name>
-    <question>What country and continent is it from?</question>
-    <answer>
-      <The_continent_name>North America</The_Continent_name>
-      <The_continent_name>United States</The_Country_name>
-    </answer>
-  </Form>
-</questionnaire>
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="questionnaire">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Continents">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Continent" minOccurs="6" type="options">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element ref="Country">
+                      <xsd:complexType>
+                        <xsd:attribute name="country_name">
+                      </xsd:complexType>
+                  </xsd:sequence>
+                  <xsd:attribute name="United States">
+                  <xsd:attribute name="South America">
+                  <xsd:attribute name="Europe">
+                  <xsd:attribute name="Asia">・・・・・・・・・・一つは絶対使う
+                  <xsd:attribute name="Africa">
+                  <xsd:attribute name="Australia">
+                </xsd:complexType>
+              </xsd:element>
+              <!-- ref of Country -->
+              <xsd:element name="Country">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <FamousFood>
+                      <xsd:element name="Food_name" type="xsd:string">
+                      <xsd:element name="Average_price" type="xsd:string">
+                      <xsd:element name="Ingredient" type="xsd:string" maxOccurs="unbounded">
+                    </FamousFood>
+                  </xsd:sequence>
+                  <!-- 国 -->・・・・・・・・・・・・・・・
+                  <xsd:attribute name="United States">
+                  <xsd:attribute name="South America">
+                  <xsd:attribute name="Europe">
+                  <xsd:attribute name="Asia">
+                  <xsd:attribute name="Africa">
+                  <xsd:attribute name="Australia">
+                </xsd:complexType>
+              </xsd:element>
+              <!-- ref of Country -->
+            </xsd:sequence>
+            <xsd:attribute name="continent_name" type="xsd:string"> //use,//2
+          </xsd:complexType>
+        </xsd:element>
 
+
+
+        <xsd:element name="Form">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="FirstName" type="xsd:string">
+              <xsd:element name="MiddleName" type="xsd:string">
+              <xsd:element name="LastName" type="xsd:string">
+              <xsd:element name="Age" type="ageType">
+              <!-- restriction -->
+                <xs:simpleType name="ageType">
+                  <xs:restriction base="xs:int">
+                    <xs:minInclusive value="0"/>
+                    <xs:maxInclusive value="120"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              <!-- fin -->
+              <xsd:element name="DateOfBirth">
+              <xsd:element name="Gender">
+              <xsd:element name="Address">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Address1" type="xsd:string">
+                    <xsd:element name="Address2" type="xsd:string">
+                    <xsd:element name="City" type="xsd:string">
+                    <xsd:element name="ZipCode" type="">
+                    <xsd:element name="Country" type="xsd:string">
+                  <xsd:sequence>
+                </xsd:complexType>
+              <xsd:element ref="Telepone" type="TeleponeType">
+              <xsd:element name="Occupatin">
+              <xsd:element name="FavFood">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="The_food_name">
+                    <xsd:element name="The_continent_name" type="Continent_options">
+                      <!-- restriction -->
+                      <xsd:simpleType name="Continent_options">
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="North America">
+                          <xsd:enumeration value="South America">
+                          <xsd:enumeration value="Europe">
+                          <xsd:enumeration value="Asia">
+                          <xsd:enumeration value="Africa">
+                          <xsd:enumeration value="Australia">
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                      <!-- fin -->
+                    <xsd:element name="The_continent_name">
+                  </xsd:sequence>
+                </xsd:complexType>
+              <!-- restriction -->
+              <xsd:simpleType name="TeleponeType">
+                <xsd:restriction base="xsd:string" base="xsd:string">
+                  <xsd:pattern value="\d{3}-\d{3}-\d{3}-\d{3}">
+                </xsd:restriction>
+              </xsd:simpleType>
+              <!-- fin -->
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</schema>
